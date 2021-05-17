@@ -1,0 +1,856 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		013DCEFC1562944139CAF74F /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 5900CDE8ABEDCC770135CACF /* awsconfiguration.json */; };
+		6E86E36AB4C9CCC6EE982F8D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = AA11CBC8EB12F3FEBCD89BEB /* amplifyconfiguration.json */; };
+		C70100E026522324008067AA /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100DF26522324008067AA /* SessionManager.swift */; };
+		C70100E126522324008067AA /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100DF26522324008067AA /* SessionManager.swift */; };
+		C70100E426522A0D008067AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100E326522A0D008067AA /* LoginView.swift */; };
+		C70100E526522A0D008067AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100E326522A0D008067AA /* LoginView.swift */; };
+		C70100E726522A21008067AA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100E626522A21008067AA /* SignUpView.swift */; };
+		C70100E826522A21008067AA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100E626522A21008067AA /* SignUpView.swift */; };
+		C70100EA26522A29008067AA /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100E926522A29008067AA /* SessionView.swift */; };
+		C70100EB26522A29008067AA /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100E926522A29008067AA /* SessionView.swift */; };
+		C70100ED26522A40008067AA /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100EC26522A40008067AA /* ConfirmationView.swift */; };
+		C70100EE26522A40008067AA /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100EC26522A40008067AA /* ConfirmationView.swift */; };
+		C7A6C10D264FAF6500B134DF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C10C264FAF6500B134DF /* Tests_iOS.swift */; };
+		C7A6C118264FAF6500B134DF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C117264FAF6500B134DF /* Tests_macOS.swift */; };
+		C7A6C11A264FAF6500B134DF /* ChachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C0F1264FAF6400B134DF /* ChachApp.swift */; };
+		C7A6C11B264FAF6500B134DF /* ChachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C0F1264FAF6400B134DF /* ChachApp.swift */; };
+		C7A6C11C264FAF6500B134DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C0F2264FAF6400B134DF /* ContentView.swift */; };
+		C7A6C11D264FAF6500B134DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C0F2264FAF6400B134DF /* ContentView.swift */; };
+		C7A6C11E264FAF6500B134DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A6C0F3264FAF6500B134DF /* Assets.xcassets */; };
+		C7A6C11F264FAF6500B134DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A6C0F3264FAF6500B134DF /* Assets.xcassets */; };
+		C7A6C130264FAF9A00B134DF /* Amplify in Frameworks */ = {isa = PBXBuildFile; productRef = C7A6C12F264FAF9A00B134DF /* Amplify */; };
+		C7A6C132264FAF9A00B134DF /* AWSCognitoAuthPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = C7A6C131264FAF9A00B134DF /* AWSCognitoAuthPlugin */; };
+		C7A6C134264FAF9A00B134DF /* AWSS3StoragePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = C7A6C133264FAF9A00B134DF /* AWSS3StoragePlugin */; };
+		C7A6C136264FAF9A00B134DF /* AWSPluginsCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7A6C135264FAF9A00B134DF /* AWSPluginsCore */; };
+		C7A6C138264FAF9A00B134DF /* AWSPinpointAnalyticsPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = C7A6C137264FAF9A00B134DF /* AWSPinpointAnalyticsPlugin */; };
+		C7A6C13A264FAF9A00B134DF /* AWSDataStorePlugin in Frameworks */ = {isa = PBXBuildFile; productRef = C7A6C139264FAF9A00B134DF /* AWSDataStorePlugin */; };
+		C7A6C13C264FAF9A00B134DF /* AWSAPIPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = C7A6C13B264FAF9A00B134DF /* AWSAPIPlugin */; };
+		C7A6C13F264FAFFA00B134DF /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A6C13D264FAFFA00B134DF /* awsconfiguration.json */; };
+		C7A6C140264FAFFA00B134DF /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A6C13D264FAFFA00B134DF /* awsconfiguration.json */; };
+		C7A6C141264FAFFA00B134DF /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A6C13E264FAFFA00B134DF /* amplifyconfiguration.json */; };
+		C7A6C142264FAFFA00B134DF /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A6C13E264FAFFA00B134DF /* amplifyconfiguration.json */; };
+		C7A6C14426509DA700B134DF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C14326509DA700B134DF /* UserViewModel.swift */; };
+		C7A6C14526509DA700B134DF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C14326509DA700B134DF /* UserViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C7A6C109264FAF6500B134DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7A6C0EC264FAF6400B134DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7A6C0F7264FAF6500B134DF;
+			remoteInfo = "Chach (iOS)";
+		};
+		C7A6C114264FAF6500B134DF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7A6C0EC264FAF6400B134DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7A6C0FF264FAF6500B134DF;
+			remoteInfo = "Chach (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5900CDE8ABEDCC770135CACF /* awsconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		AA11CBC8EB12F3FEBCD89BEB /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		C70100DF26522324008067AA /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		C70100E326522A0D008067AA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C70100E626522A21008067AA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		C70100E926522A29008067AA /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
+		C70100EC26522A40008067AA /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		C7A6C0F1264FAF6400B134DF /* ChachApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChachApp.swift; sourceTree = "<group>"; };
+		C7A6C0F2264FAF6400B134DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C7A6C0F3264FAF6500B134DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7A6C0F8264FAF6500B134DF /* Chach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chach.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A6C0FB264FAF6500B134DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A6C100264FAF6500B134DF /* Chach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chach.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A6C102264FAF6500B134DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A6C103264FAF6500B134DF /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		C7A6C108264FAF6500B134DF /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A6C10C264FAF6500B134DF /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		C7A6C10E264FAF6500B134DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A6C113264FAF6500B134DF /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7A6C117264FAF6500B134DF /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		C7A6C119264FAF6500B134DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7A6C13D264FAFFA00B134DF /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
+		C7A6C13E264FAFFA00B134DF /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
+		C7A6C14326509DA700B134DF /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7A6C0F5264FAF6500B134DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A6C136264FAF9A00B134DF /* AWSPluginsCore in Frameworks */,
+				C7A6C130264FAF9A00B134DF /* Amplify in Frameworks */,
+				C7A6C13C264FAF9A00B134DF /* AWSAPIPlugin in Frameworks */,
+				C7A6C138264FAF9A00B134DF /* AWSPinpointAnalyticsPlugin in Frameworks */,
+				C7A6C13A264FAF9A00B134DF /* AWSDataStorePlugin in Frameworks */,
+				C7A6C132264FAF9A00B134DF /* AWSCognitoAuthPlugin in Frameworks */,
+				C7A6C134264FAF9A00B134DF /* AWSS3StoragePlugin in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6C0FD264FAF6500B134DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6C105264FAF6500B134DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6C110264FAF6500B134DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		81DAD3CE89704F1707D9023E /* AmplifyConfig */ = {
+			isa = PBXGroup;
+			children = (
+				5900CDE8ABEDCC770135CACF /* awsconfiguration.json */,
+				AA11CBC8EB12F3FEBCD89BEB /* amplifyconfiguration.json */,
+			);
+			name = AmplifyConfig;
+			sourceTree = "<group>";
+		};
+		C70100E2265229F5008067AA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C70100E326522A0D008067AA /* LoginView.swift */,
+				C70100E626522A21008067AA /* SignUpView.swift */,
+				C70100E926522A29008067AA /* SessionView.swift */,
+				C70100EC26522A40008067AA /* ConfirmationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C70100EF265241E8008067AA /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				C7A6C14326509DA700B134DF /* UserViewModel.swift */,
+				C7A6C0F2264FAF6400B134DF /* ContentView.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		C7A6C0EB264FAF6400B134DF = {
+			isa = PBXGroup;
+			children = (
+				C7A6C0F0264FAF6400B134DF /* Shared */,
+				C7A6C0FA264FAF6500B134DF /* iOS */,
+				C7A6C101264FAF6500B134DF /* macOS */,
+				C7A6C10B264FAF6500B134DF /* Tests iOS */,
+				C7A6C116264FAF6500B134DF /* Tests macOS */,
+				C7A6C0F9264FAF6500B134DF /* Products */,
+				81DAD3CE89704F1707D9023E /* AmplifyConfig */,
+			);
+			sourceTree = "<group>";
+		};
+		C7A6C0F0264FAF6400B134DF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C70100EF265241E8008067AA /* Old */,
+				C70100E2265229F5008067AA /* View */,
+				C7A6C13E264FAFFA00B134DF /* amplifyconfiguration.json */,
+				C7A6C13D264FAFFA00B134DF /* awsconfiguration.json */,
+				C7A6C0F1264FAF6400B134DF /* ChachApp.swift */,
+				C7A6C0F3264FAF6500B134DF /* Assets.xcassets */,
+				C70100DF26522324008067AA /* SessionManager.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C7A6C0F9264FAF6500B134DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7A6C0F8264FAF6500B134DF /* Chach.app */,
+				C7A6C100264FAF6500B134DF /* Chach.app */,
+				C7A6C108264FAF6500B134DF /* Tests iOS.xctest */,
+				C7A6C113264FAF6500B134DF /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C7A6C0FA264FAF6500B134DF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C7A6C0FB264FAF6500B134DF /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		C7A6C101264FAF6500B134DF /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				C7A6C102264FAF6500B134DF /* Info.plist */,
+				C7A6C103264FAF6500B134DF /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		C7A6C10B264FAF6500B134DF /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C7A6C10C264FAF6500B134DF /* Tests_iOS.swift */,
+				C7A6C10E264FAF6500B134DF /* Info.plist */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		C7A6C116264FAF6500B134DF /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				C7A6C117264FAF6500B134DF /* Tests_macOS.swift */,
+				C7A6C119264FAF6500B134DF /* Info.plist */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7A6C0F7264FAF6500B134DF /* Chach (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7A6C122264FAF6500B134DF /* Build configuration list for PBXNativeTarget "Chach (iOS)" */;
+			buildPhases = (
+				C7A6C0F4264FAF6500B134DF /* Sources */,
+				C7A6C0F5264FAF6500B134DF /* Frameworks */,
+				C7A6C0F6264FAF6500B134DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chach (iOS)";
+			packageProductDependencies = (
+				C7A6C12F264FAF9A00B134DF /* Amplify */,
+				C7A6C131264FAF9A00B134DF /* AWSCognitoAuthPlugin */,
+				C7A6C133264FAF9A00B134DF /* AWSS3StoragePlugin */,
+				C7A6C135264FAF9A00B134DF /* AWSPluginsCore */,
+				C7A6C137264FAF9A00B134DF /* AWSPinpointAnalyticsPlugin */,
+				C7A6C139264FAF9A00B134DF /* AWSDataStorePlugin */,
+				C7A6C13B264FAF9A00B134DF /* AWSAPIPlugin */,
+			);
+			productName = "Chach (iOS)";
+			productReference = C7A6C0F8264FAF6500B134DF /* Chach.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C7A6C0FF264FAF6500B134DF /* Chach (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7A6C125264FAF6500B134DF /* Build configuration list for PBXNativeTarget "Chach (macOS)" */;
+			buildPhases = (
+				C7A6C0FC264FAF6500B134DF /* Sources */,
+				C7A6C0FD264FAF6500B134DF /* Frameworks */,
+				C7A6C0FE264FAF6500B134DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chach (macOS)";
+			productName = "Chach (macOS)";
+			productReference = C7A6C100264FAF6500B134DF /* Chach.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C7A6C107264FAF6500B134DF /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7A6C128264FAF6500B134DF /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				C7A6C104264FAF6500B134DF /* Sources */,
+				C7A6C105264FAF6500B134DF /* Frameworks */,
+				C7A6C106264FAF6500B134DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7A6C10A264FAF6500B134DF /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = C7A6C108264FAF6500B134DF /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C7A6C112264FAF6500B134DF /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7A6C12B264FAF6500B134DF /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				C7A6C10F264FAF6500B134DF /* Sources */,
+				C7A6C110264FAF6500B134DF /* Frameworks */,
+				C7A6C111264FAF6500B134DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7A6C115264FAF6500B134DF /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = C7A6C113264FAF6500B134DF /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7A6C0EC264FAF6400B134DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					C7A6C0F7264FAF6500B134DF = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					C7A6C0FF264FAF6500B134DF = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					C7A6C107264FAF6500B134DF = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = C7A6C0F7264FAF6500B134DF;
+					};
+					C7A6C112264FAF6500B134DF = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = C7A6C0FF264FAF6500B134DF;
+					};
+				};
+			};
+			buildConfigurationList = C7A6C0EF264FAF6400B134DF /* Build configuration list for PBXProject "Chach" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C7A6C0EB264FAF6400B134DF;
+			packageReferences = (
+				C7A6C12E264FAF9A00B134DF /* XCRemoteSwiftPackageReference "amplify-ios" */,
+			);
+			productRefGroup = C7A6C0F9264FAF6500B134DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7A6C0F7264FAF6500B134DF /* Chach (iOS) */,
+				C7A6C0FF264FAF6500B134DF /* Chach (macOS) */,
+				C7A6C107264FAF6500B134DF /* Tests iOS */,
+				C7A6C112264FAF6500B134DF /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7A6C0F6264FAF6500B134DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A6C13F264FAFFA00B134DF /* awsconfiguration.json in Resources */,
+				C7A6C11E264FAF6500B134DF /* Assets.xcassets in Resources */,
+				C7A6C141264FAFFA00B134DF /* amplifyconfiguration.json in Resources */,
+				013DCEFC1562944139CAF74F /* awsconfiguration.json in Resources */,
+				6E86E36AB4C9CCC6EE982F8D /* amplifyconfiguration.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6C0FE264FAF6500B134DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A6C140264FAFFA00B134DF /* awsconfiguration.json in Resources */,
+				C7A6C142264FAFFA00B134DF /* amplifyconfiguration.json in Resources */,
+				C7A6C11F264FAF6500B134DF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6C106264FAF6500B134DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6C111264FAF6500B134DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7A6C0F4264FAF6500B134DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70100EA26522A29008067AA /* SessionView.swift in Sources */,
+				C7A6C11C264FAF6500B134DF /* ContentView.swift in Sources */,
+				C7A6C14426509DA700B134DF /* UserViewModel.swift in Sources */,
+				C70100E026522324008067AA /* SessionManager.swift in Sources */,
+				C70100E426522A0D008067AA /* LoginView.swift in Sources */,
+				C70100ED26522A40008067AA /* ConfirmationView.swift in Sources */,
+				C70100E726522A21008067AA /* SignUpView.swift in Sources */,
+				C7A6C11A264FAF6500B134DF /* ChachApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6C0FC264FAF6500B134DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C70100EB26522A29008067AA /* SessionView.swift in Sources */,
+				C7A6C11D264FAF6500B134DF /* ContentView.swift in Sources */,
+				C7A6C14526509DA700B134DF /* UserViewModel.swift in Sources */,
+				C70100E126522324008067AA /* SessionManager.swift in Sources */,
+				C70100E526522A0D008067AA /* LoginView.swift in Sources */,
+				C70100EE26522A40008067AA /* ConfirmationView.swift in Sources */,
+				C70100E826522A21008067AA /* SignUpView.swift in Sources */,
+				C7A6C11B264FAF6500B134DF /* ChachApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6C104264FAF6500B134DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A6C10D264FAF6500B134DF /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7A6C10F264FAF6500B134DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A6C118264FAF6500B134DF /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C7A6C10A264FAF6500B134DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7A6C0F7264FAF6500B134DF /* Chach (iOS) */;
+			targetProxy = C7A6C109264FAF6500B134DF /* PBXContainerItemProxy */;
+		};
+		C7A6C115264FAF6500B134DF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7A6C0FF264FAF6500B134DF /* Chach (macOS) */;
+			targetProxy = C7A6C114264FAF6500B134DF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C7A6C120264FAF6500B134DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C7A6C121264FAF6500B134DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C7A6C123264FAF6500B134DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W4W6VGC55J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuting.Chach;
+				PRODUCT_NAME = Chach;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7A6C124264FAF6500B134DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W4W6VGC55J;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuting.Chach;
+				PRODUCT_NAME = Chach;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7A6C126264FAF6500B134DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W4W6VGC55J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuting.Chach;
+				PRODUCT_NAME = Chach;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C7A6C127264FAF6500B134DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W4W6VGC55J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yuting.Chach;
+				PRODUCT_NAME = Chach;
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C7A6C129264FAF6500B134DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W4W6VGC55J;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yuting.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Chach (iOS)";
+			};
+			name = Debug;
+		};
+		C7A6C12A264FAF6500B134DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W4W6VGC55J;
+				INFOPLIST_FILE = "Tests iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yuting.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Chach (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7A6C12C264FAF6500B134DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W4W6VGC55J;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yuting.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Chach (macOS)";
+			};
+			name = Debug;
+		};
+		C7A6C12D264FAF6500B134DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W4W6VGC55J;
+				INFOPLIST_FILE = "Tests macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yuting.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Chach (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7A6C0EF264FAF6400B134DF /* Build configuration list for PBXProject "Chach" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A6C120264FAF6500B134DF /* Debug */,
+				C7A6C121264FAF6500B134DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7A6C122264FAF6500B134DF /* Build configuration list for PBXNativeTarget "Chach (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A6C123264FAF6500B134DF /* Debug */,
+				C7A6C124264FAF6500B134DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7A6C125264FAF6500B134DF /* Build configuration list for PBXNativeTarget "Chach (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A6C126264FAF6500B134DF /* Debug */,
+				C7A6C127264FAF6500B134DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7A6C128264FAF6500B134DF /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A6C129264FAF6500B134DF /* Debug */,
+				C7A6C12A264FAF6500B134DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7A6C12B264FAF6500B134DF /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7A6C12C264FAF6500B134DF /* Debug */,
+				C7A6C12D264FAF6500B134DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C7A6C12E264FAF9A00B134DF /* XCRemoteSwiftPackageReference "amplify-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aws-amplify/amplify-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C7A6C12F264FAF9A00B134DF /* Amplify */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7A6C12E264FAF9A00B134DF /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = Amplify;
+		};
+		C7A6C131264FAF9A00B134DF /* AWSCognitoAuthPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7A6C12E264FAF9A00B134DF /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSCognitoAuthPlugin;
+		};
+		C7A6C133264FAF9A00B134DF /* AWSS3StoragePlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7A6C12E264FAF9A00B134DF /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSS3StoragePlugin;
+		};
+		C7A6C135264FAF9A00B134DF /* AWSPluginsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7A6C12E264FAF9A00B134DF /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSPluginsCore;
+		};
+		C7A6C137264FAF9A00B134DF /* AWSPinpointAnalyticsPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7A6C12E264FAF9A00B134DF /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSPinpointAnalyticsPlugin;
+		};
+		C7A6C139264FAF9A00B134DF /* AWSDataStorePlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7A6C12E264FAF9A00B134DF /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSDataStorePlugin;
+		};
+		C7A6C13B264FAF9A00B134DF /* AWSAPIPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7A6C12E264FAF9A00B134DF /* XCRemoteSwiftPackageReference "amplify-ios" */;
+			productName = AWSAPIPlugin;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C7A6C0EC264FAF6400B134DF /* Project object */;
+}
