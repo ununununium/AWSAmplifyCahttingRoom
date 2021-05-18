@@ -10,9 +10,12 @@ import Amplify
 import AWSCognitoAuthPlugin
 
 
+
 @main
 struct ChachApp: App {
     @ObservedObject var sessionManager = SessionManager()
+    
+
     
     init() {
         configureAmpplify()
@@ -35,13 +38,21 @@ struct ChachApp: App {
         WindowGroup {
             switch sessionManager.authState{
             case .login:
-                LoginView().environmentObject(sessionManager)
+                LoginView()
+                    .environmentObject(sessionManager)
+                    .transition(AnyTransition.scale.animation(.spring()))
             case .signUp:
-                SignUpView().environmentObject(sessionManager)
+                SignUpView()
+                    .environmentObject(sessionManager)
+                    .transition(AnyTransition.scale.animation(.easeOut(duration: 0.5)))
             case .confirmCode(username: let username):
-                ConfirmationView(username: username).environmentObject(sessionManager)
+                ConfirmationView(username: username)
+                    .environmentObject(sessionManager)
+                    .transition(AnyTransition.scale.animation(.spring()))
             case .session(user: let user):
-                SessionView(user: user).environmentObject(sessionManager)
+                SessionView(user: user)
+                    .environmentObject(sessionManager)
+                    .transition(AnyTransition.scale.animation(.spring()))
             }
         }
     }
