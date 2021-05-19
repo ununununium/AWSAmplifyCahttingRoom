@@ -70,7 +70,7 @@ struct SessionView: View {
                         .background(Color.purple)
                         .foregroundColor(.white)
                         .clipShape(Circle())
-                })
+                }).disabled(uploadViewModel.uploadingOperation == nil)
                 
             }
             
@@ -84,11 +84,23 @@ struct SessionView: View {
             
      
             Spacer()
-            Button("Sign Out", action:{sessionManager.signOut()})
+            
+            Button(action:{sessionManager.signOut()}){
+                Text("SIGN OUT")
+                    .padding()
+                    .background(Color.red)
+                    .foregroundColor(.white)
+                    .clipShape(Capsule())
+
+            }
+    
+                
+                
         }
         .sheet(isPresented: $shouldShowImagePicker, content: {
             ImagePicker(image: $image)
         })
+        
     }
     
     
