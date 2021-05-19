@@ -17,6 +17,8 @@ class UploadViewModel : ObservableObject{
     @Published var uploadingProgress:Progress?
     @Published var paused = false
     
+    var uploadingOperation:StorageUploadDataOperation?
+    
     var tokens:Set<AnyCancellable> = []
     
     init(){
@@ -24,12 +26,19 @@ class UploadViewModel : ObservableObject{
     }
     
     func pauseResumeUploading(){
+        
         let t = $paused.sink{
             val in
             
+            guard let currOp = self.uploadingOperation else{return}
+            
             if val {
+                currOp.pause()
+                print("=======================")
                 print("paused")
             }else{
+                currOp.resume()
+                print("=======================")
                 print("resumed")
             }
         }
@@ -43,10 +52,15 @@ class UploadViewModel : ObservableObject{
         let fileKey = UUID().uuidString + ".jpg"
         
         let storageOperation = Amplify.Storage.uploadData(key:fileKey, data: imageData)
+        self.uploadingOperation = storageOperation
+        
         let progressSink = storageOperation.progressPublisher.sink {
             progress in
             print("Progress: \(progress)")
-            self.uploadingProgress = progress
+            DispatchQueue.main.async{
+                self.uploadingProgress = progress
+
+            }
         }
         let resultSink = storageOperation.resultPublisher.sink {
             if case let .failure(storageError) = $0 {
