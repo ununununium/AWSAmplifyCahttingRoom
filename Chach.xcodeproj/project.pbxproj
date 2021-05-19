@@ -19,6 +19,10 @@
 		C70100EB26522A29008067AA /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100E926522A29008067AA /* SessionView.swift */; };
 		C70100ED26522A40008067AA /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100EC26522A40008067AA /* ConfirmationView.swift */; };
 		C70100EE26522A40008067AA /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100EC26522A40008067AA /* ConfirmationView.swift */; };
+		C70100F22654DBCE008067AA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100F12654DBCE008067AA /* ImagePicker.swift */; };
+		C70100F32654DBCE008067AA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100F12654DBCE008067AA /* ImagePicker.swift */; };
+		C70100F52654EE1B008067AA /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100F42654EE1B008067AA /* UploadViewModel.swift */; };
+		C70100F62654EE1B008067AA /* UploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70100F42654EE1B008067AA /* UploadViewModel.swift */; };
 		C7A6C10D264FAF6500B134DF /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C10C264FAF6500B134DF /* Tests_iOS.swift */; };
 		C7A6C118264FAF6500B134DF /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C117264FAF6500B134DF /* Tests_macOS.swift */; };
 		C7A6C11A264FAF6500B134DF /* ChachApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C0F1264FAF6400B134DF /* ChachApp.swift */; };
@@ -65,6 +69,8 @@
 		C70100E626522A21008067AA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C70100E926522A29008067AA /* SessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionView.swift; sourceTree = "<group>"; };
 		C70100EC26522A40008067AA /* ConfirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		C70100F12654DBCE008067AA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		C70100F42654EE1B008067AA /* UploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewModel.swift; sourceTree = "<group>"; };
 		C7A6C0F1264FAF6400B134DF /* ChachApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChachApp.swift; sourceTree = "<group>"; };
 		C7A6C0F3264FAF6500B134DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7A6C0F8264FAF6500B134DF /* Chach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chach.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +145,7 @@
 				C70100E626522A21008067AA /* SignUpView.swift */,
 				C70100E926522A29008067AA /* SessionView.swift */,
 				C70100EC26522A40008067AA /* ConfirmationView.swift */,
+				C70100F12654DBCE008067AA /* ImagePicker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 			children = (
 				C7A6C14326509DA700B134DF /* SignUpViewModel.swift */,
 				C70100DF26522324008067AA /* SessionManager.swift */,
+				C70100F42654EE1B008067AA /* UploadViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -399,11 +407,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70100EA26522A29008067AA /* SessionView.swift in Sources */,
+				C70100F52654EE1B008067AA /* UploadViewModel.swift in Sources */,
 				C7A6C14426509DA700B134DF /* SignUpViewModel.swift in Sources */,
 				C70100E026522324008067AA /* SessionManager.swift in Sources */,
 				C70100E426522A0D008067AA /* LoginView.swift in Sources */,
 				C70100ED26522A40008067AA /* ConfirmationView.swift in Sources */,
 				C70100E726522A21008067AA /* SignUpView.swift in Sources */,
+				C70100F22654DBCE008067AA /* ImagePicker.swift in Sources */,
 				C7A6C11A264FAF6500B134DF /* ChachApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,11 +423,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C70100EB26522A29008067AA /* SessionView.swift in Sources */,
+				C70100F62654EE1B008067AA /* UploadViewModel.swift in Sources */,
 				C7A6C14526509DA700B134DF /* SignUpViewModel.swift in Sources */,
 				C70100E126522324008067AA /* SessionManager.swift in Sources */,
 				C70100E526522A0D008067AA /* LoginView.swift in Sources */,
 				C70100EE26522A40008067AA /* ConfirmationView.swift in Sources */,
 				C70100E826522A21008067AA /* SignUpView.swift in Sources */,
+				C70100F32654DBCE008067AA /* ImagePicker.swift in Sources */,
 				C7A6C11B264FAF6500B134DF /* ChachApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

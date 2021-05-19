@@ -10,70 +10,88 @@ import SwiftUI
 import Amplify
 import Dispatch
 import UIKit
-
-struct ImagePicker: UIViewControllerRepresentable {
- 
-    var sourceType: UIImagePickerController.SourceType = .photoLibrary
- 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
- 
-        let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = sourceType
- 
-        return imagePicker
-    }
- 
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
- 
-    }
-}
+import Combine
 
 struct SessionView: View {
     let user: AuthUser
     @EnvironmentObject var sessionManager : SessionManager
-    @State var fileStatus : String?
-    @State var isShowPhotoLibrary:Bool = false
+//    @State var fileStatus : String?
+    @State var shouldShowImagePicker = false
+    @State var image: UIImage?
+    
+    @ObservedObject var uploadViewModel = UploadViewModel()
     
     var body: some View{
         VStack{
-            Spacer()
             Text("Welcome, " + user.username)
-            if let fileStatus = self.fileStatus{
+                .fontWeight(.bold)
+                .font(.largeTitle)
+            
+            Spacer(minLength: 20)
+            
+            if let image = self.image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFit()
+            }
+            
+            
+
+            if let fileStatus = uploadViewModel.fileStatus{
                 Text(fileStatus)
             }
-            Button("Upload File", action:uploadFile)
-            Button("Choose Image/Video", action:{isShowPhotoLibrary.toggle()})
+            
+            
+            
+            HStack {
+                Button(action: {shouldShowImagePicker.toggle()}, label: {
+                    Image(systemName: "camera")
+                        .font(.largeTitle)
+                        .padding()
+                        .background(Color.purple)
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                })
+                
+                Button(action: {uploadViewModel.uploadFile(self.image!)}, label: {
+                    Image(systemName: "icloud.and.arrow.up")
+                        .font(.largeTitle)
+                        .padding()
+                        .background(Color.purple)
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                }).disabled(self.image == nil)
+                
+                Button(action: {uploadViewModel.paused.toggle()}, label: {
+                    let name = uploadViewModel.paused ? "play.circle":"pause.circle"
+                    Image(systemName: name)
+                        .font(.largeTitle)
+                        .padding()
+                        .background(Color.purple)
+                        .foregroundColor(.white)
+                        .clipShape(Circle())
+                })
+                
+            }
+            
+            
+
+            
+            if let progress = uploadViewModel.uploadingProgress{
+                ProgressView(progress)
+            }
+        
+            
+     
             Spacer()
             Button("Sign Out", action:{sessionManager.signOut()})
         }
-        .sheet(isPresented: $isShowPhotoLibrary) {
-            ImagePicker(sourceType: .photoLibrary)
-        }
+        .sheet(isPresented: $shouldShowImagePicker, content: {
+            ImagePicker(image: $image)
+        })
     }
     
-    func uploadFile(){
-        let fileKey = "testFile.txt"
-        let fileContents = "This is test content \n this is another content"
-        let fileData = fileContents.data(using: .utf8)!
-        
-        Amplify.Storage.uploadData(key: fileKey, data: fileData){
-            result in
-            switch result{
-            case .failure(let storageError):
-                print("Failed to upload",storageError)
-                
-                DispatchQueue.main.async {
-                    fileStatus = "❌Failed"
-                }
-            case .success(let key):
-                print("File with key \(key) uploaded")
-                DispatchQueue.main.async {
-                    fileStatus = "✅Success"
-                }
-            }
-        }
-    }
+    
 }
 
 

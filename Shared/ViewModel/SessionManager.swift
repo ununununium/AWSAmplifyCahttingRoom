@@ -7,6 +7,10 @@
 import Combine
 import Amplify
 import Dispatch
+import Foundation
+import SwiftUI
+import UIKit
+
 
 enum AuthState {
     case signUp
@@ -115,7 +119,5 @@ final class SessionManager: ObservableObject{
             }
         }
     }
-    
-    
-    
+
 }
