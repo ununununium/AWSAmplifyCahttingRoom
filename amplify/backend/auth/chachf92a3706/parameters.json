@@ -1,6 +1,6 @@
 {
     "identityPoolName": "chachf92a3706_identitypool_f92a3706",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "chachf92a3706",
     "userPoolName": "chachf92a3706_userpool_f92a3706",
     "autoVerifiedAttributes": [

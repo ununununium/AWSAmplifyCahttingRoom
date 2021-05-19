@@ -8,6 +8,7 @@
 import SwiftUI
 import Amplify
 import AWSCognitoAuthPlugin
+import AWSS3StoragePlugin
 
 
 
@@ -26,8 +27,9 @@ struct ChachApp: App {
     func configureAmpplify(){
         do {
             try Amplify.add(plugin: AWSCognitoAuthPlugin())
+            try Amplify.add(plugin: AWSS3StoragePlugin())
             try Amplify.configure()
-            print("Amplify configured with auth plugin")
+            print("Amplify configured")
         } catch {
             print("Failed to initialize Amplify with \(error)")
         }

@@ -6,5 +6,11 @@
       "dependsOn": [],
       "customAuth": false
     }
+  },
+  "storage": {
+    "UserPosts": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }
