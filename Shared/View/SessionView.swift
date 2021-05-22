@@ -28,8 +28,8 @@ struct SessionView: View {
                 NavigationLink(destination: PhotoUploadingView()) {
                     Text("PhotoUploadingView")
                 }
-                NavigationLink(destination: PhotoUploadingView()) {
-                    Text("PhotoUploadingView")
+                NavigationLink(destination: ChattingView()) {
+                    Text("ChattingView")
                 }
                 
             }
@@ -43,7 +43,7 @@ struct SessionView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action:{sessionManager.signOut()}){
-                        Text("Sign Out").foregroundColor(.red)
+                        Text("Sign Out")
                     }
                 }
                 

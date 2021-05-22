@@ -13,6 +13,8 @@ import AWSS3StoragePlugin
 import AWSS3StoragePlugin  // Imports the Amplify plugin interface
 import AWSS3               // Imports the AWSS3 client escape hatch
 
+import AWSAPIPlugin
+
 @main
 struct ChachApp: App {
     @ObservedObject var sessionManager = SessionManager()
@@ -56,6 +58,9 @@ struct ChachApp: App {
         do {
             try Amplify.add(plugin: AWSCognitoAuthPlugin())
             try Amplify.add(plugin: AWSS3StoragePlugin())
+            
+            let models = AmplifyModels()
+            try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: models))
             try Amplify.configure()
             print("Amplify configured")
         } catch {
