@@ -42,6 +42,8 @@
 		C7A6C142264FAFFA00B134DF /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = C7A6C13E264FAFFA00B134DF /* amplifyconfiguration.json */; };
 		C7A6C14426509DA700B134DF /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C14326509DA700B134DF /* SignUpViewModel.swift */; };
 		C7A6C14526509DA700B134DF /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6C14326509DA700B134DF /* SignUpViewModel.swift */; };
+		C7FD52612658B7670060BEA3 /* PhotoUploadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD52602658B7670060BEA3 /* PhotoUploadingView.swift */; };
+		C7FD52622658B7670060BEA3 /* PhotoUploadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FD52602658B7670060BEA3 /* PhotoUploadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,7 @@
 		C7A6C13D264FAFFA00B134DF /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		C7A6C13E264FAFFA00B134DF /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
 		C7A6C14326509DA700B134DF /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		C7FD52602658B7670060BEA3 /* PhotoUploadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +149,7 @@
 				C70100E926522A29008067AA /* SessionView.swift */,
 				C70100EC26522A40008067AA /* ConfirmationView.swift */,
 				C70100F12654DBCE008067AA /* ImagePicker.swift */,
+				C7FD52602658B7670060BEA3 /* PhotoUploadingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +415,7 @@
 				C7A6C14426509DA700B134DF /* SignUpViewModel.swift in Sources */,
 				C70100E026522324008067AA /* SessionManager.swift in Sources */,
 				C70100E426522A0D008067AA /* LoginView.swift in Sources */,
+				C7FD52612658B7670060BEA3 /* PhotoUploadingView.swift in Sources */,
 				C70100ED26522A40008067AA /* ConfirmationView.swift in Sources */,
 				C70100E726522A21008067AA /* SignUpView.swift in Sources */,
 				C70100F22654DBCE008067AA /* ImagePicker.swift in Sources */,
@@ -427,6 +432,7 @@
 				C7A6C14526509DA700B134DF /* SignUpViewModel.swift in Sources */,
 				C70100E126522324008067AA /* SessionManager.swift in Sources */,
 				C70100E526522A0D008067AA /* LoginView.swift in Sources */,
+				C7FD52622658B7670060BEA3 /* PhotoUploadingView.swift in Sources */,
 				C70100EE26522A40008067AA /* ConfirmationView.swift in Sources */,
 				C70100E826522A21008067AA /* SignUpView.swift in Sources */,
 				C70100F32654DBCE008067AA /* ImagePicker.swift in Sources */,

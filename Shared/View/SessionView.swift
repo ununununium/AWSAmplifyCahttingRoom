@@ -11,95 +11,44 @@ import Amplify
 import Dispatch
 import UIKit
 import Combine
+import AWSS3StoragePlugin  // Imports the Amplify plugin interface
+import AWSS3               // Imports the AWSS3 client escape hatch
+import AWSCognitoAuthPlugin
+
 
 struct SessionView: View {
     let user: AuthUser
     @EnvironmentObject var sessionManager : SessionManager
-//    @State var fileStatus : String?
-    @State var shouldShowImagePicker = false
-    @State var image: UIImage?
-    
-    @ObservedObject var uploadViewModel = UploadViewModel()
     
     var body: some View{
-        VStack{
-            Text("Welcome, " + user.username)
-                .fontWeight(.bold)
-                .font(.largeTitle)
-            
-            Spacer(minLength: 20)
-            
-            if let image = self.image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-            }
-            
-            
-
-            if let fileStatus = uploadViewModel.fileStatus{
-                Text(fileStatus)
-            }
-            
-            
-            
-            HStack {
-                Button(action: {shouldShowImagePicker.toggle()}, label: {
-                    Image(systemName: "camera")
-                        .font(.largeTitle)
-                        .padding()
-                        .background(Color.purple)
-                        .foregroundColor(.white)
-                        .clipShape(Circle())
-                })
-                
-                Button(action: {uploadViewModel.uploadFile(self.image!)}, label: {
-                    Image(systemName: "icloud.and.arrow.up")
-                        .font(.largeTitle)
-                        .padding()
-                        .background(Color.purple)
-                        .foregroundColor(.white)
-                        .clipShape(Circle())
-                }).disabled(self.image == nil)
-                
-                Button(action: {uploadViewModel.paused.toggle()}, label: {
-                    let name = uploadViewModel.paused ? "play.circle":"pause.circle"
-                    Image(systemName: name)
-                        .font(.largeTitle)
-                        .padding()
-                        .background(Color.purple)
-                        .foregroundColor(.white)
-                        .clipShape(Circle())
-                }).disabled(uploadViewModel.uploadingOperation == nil)
-                
-            }
-            
-            
-
-            
-            if let progress = uploadViewModel.uploadingProgress{
-                ProgressView(progress)
-            }
         
+        NavigationView {
             
-     
-            Spacer()
-            
-            Button(action:{sessionManager.signOut()}){
-                Text("SIGN OUT")
-                    .padding()
-                    .background(Color.red)
-                    .foregroundColor(.white)
-                    .clipShape(Capsule())
-
+            List{
+                NavigationLink(destination: PhotoUploadingView()) {
+                    Text("PhotoUploadingView")
+                }
+                NavigationLink(destination: PhotoUploadingView()) {
+                    Text("PhotoUploadingView")
+                }
+                
             }
-    
+            .navigationTitle("All Views")
+            .toolbar{
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Text("Hello, \(user.username) 🐙")
+                }
                 
                 
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action:{sessionManager.signOut()}){
+                        Text("Sign Out").foregroundColor(.red)
+                    }
+                }
+                
+            }
         }
-        .sheet(isPresented: $shouldShowImagePicker, content: {
-            ImagePicker(image: $image)
-        })
         
     }
     
@@ -114,6 +63,6 @@ struct SessionView_Previews: PreviewProvider{
     }
     
     static var previews : some View{
-            SessionView(user: DummyUser())
+        SessionView(user: DummyUser())
     }
 }
