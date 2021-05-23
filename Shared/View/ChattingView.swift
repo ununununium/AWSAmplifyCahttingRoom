@@ -13,7 +13,7 @@ struct ChattingView: View{
     @State var text = ""
     @ObservedObject var sot = SourceOfTruth()
     
-    let currentUser = "gggMMM"
+    let currentUser = "pppMMM"
     
     init(){
         sot.getMessages()
@@ -22,22 +22,30 @@ struct ChattingView: View{
     
     var body: some View{
         VStack{
+            
             ScrollView{
-//                LazyVStack{
+
                 ScrollViewReader { value in
-                    ForEach(sot.messages){
-                        message in
-                        
-                        MessageRow(
-                            message: message,
-                            isCurrentUser: message.senderName == currentUser
-                        )
-                    }.onChange(of: sot.messages.count) { _ in
-                        value.scrollTo(sot.messages.count - 1)
+                    LazyVStack  {
+                        ForEach(sot.messages){
+                            message in
+
+                            MessageRow(
+                                message: message,
+                                isCurrentUser: message.senderName == currentUser
+                            )
+                        }.onAppear {
+                            if let tmp = sot.messages.last {
+                                print("====>" + tmp.body)
+                            }else{
+                                print("====> mmmm")
+                            }
+
+                            value.scrollTo(sot.messages.count-1)
+                        }
                     }
                 }
             }
-            
             HStack{
                 TextField("Enter message", text:$text)
                 Button("Send", action:{didTapSend()})
@@ -45,6 +53,7 @@ struct ChattingView: View{
                     .foregroundColor(.white)
                     .background(Color.blue)
             }
+            
         }
     }
     
@@ -60,7 +69,6 @@ struct ChattingView: View{
 }
 
 
-
 struct ChattinView_Previews: PreviewProvider {
     static var previews: some View{
         ChattingView()
@@ -74,3 +82,4 @@ extension View {
     }
 }
 #endif
+

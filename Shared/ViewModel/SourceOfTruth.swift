@@ -7,87 +7,109 @@
 
 import Foundation
 import Amplify
-
+import Combine
 
 class SourceOfTruth: ObservableObject{
     @Published var messages = [Message]()
     
+    var tokens:Set<AnyCancellable> = []
+    
     
     func send(_ message: Message){
-        Amplify.API.mutate(request: .create(message)){
-            mutationResult in
-            
-            switch mutationResult{
-            case.failure(let apiError):
-                print(apiError)
-            case .success(let creationResult):
-                
-                switch creationResult{
-                case .failure(let creationError):
-                    print(creationError)
-                case .success:
-                    print("successfully created message")
-                    
+        let token = Amplify.API.mutate(request: .create(message))
+            .resultPublisher
+            .sink { completion in
+                if case let .failure(error) = completion{
+                    print("fail to create graphql", error)
                 }
             }
-        }
+            receiveValue: { result in
+                switch result{
+                
+                case .failure(let graphQLError):
+                    print(graphQLError)
+                    
+                case .success:
+                    print("Success")
+                }
+            }
+        
+        tokens.insert(token)
+
     }
     
     func getMessages(){
-        Amplify.API.query(request: .list(Message.self)) {
-            [weak self] result in
-            do{
-                let messages = try result.get().get()
+
+        let token = Amplify.API.query(request: .list(Message.self)).resultPublisher.sink {
+            completion in
+            if case let .failure(error) = completion{
+                print(error)
+            }
+        } receiveValue: { result in
+            switch result{
+            case .success(let messages):
                 
-//                messages.forEach{
-//                    m in
-//                    self?.delete(m)
-//                }
-//                
-                DispatchQueue.main.async {
-                    self?.messages = messages.sorted(by: {$0.creationDate < $1.creationDate})
-                }
-            }catch{
+                self.messages = messages.sorted(by: {$0.creationDate < $1.creationDate})
+            case .failure(let error):
                 print(error)
             }
         }
+        
+        tokens.insert(token)
+
     }
     
     var subscription: GraphQLSubscriptionOperation<Message>?
     func observeMessages(){
-        subscription = Amplify.API.subscribe(
-            request: .subscription(of: Message.self, type: .onCreate),
-            valueListener:{
-                [weak self]subscriptionEvent in
-                switch subscriptionEvent{
-                case .connection(let connectionState):
-                    print("Connection State: ", connectionState)
-                case .data(let dataResult):
-                    do{
-                        let message = try dataResult.get()
-                        DispatchQueue.main.async {
-                            self?.messages.append(message)
-                        }
-                        
-                    }catch{
-                        print(error)
-                    }
-                    
-                }
-            },
-            completionListener:{
-                completion in
-                print(completion)
-                
+        
+        subscription = Amplify.API.subscribe(request: .subscription(of: Message.self, type: .onCreate))
+        
+        let dataSink = subscription?.subscriptionDataPublisher.sink {
+            if case let .failure(apiError) = $0 {
+                print("Subscription has terminated with \(apiError)")
+            } else {
+                print("Subscription has been closed successfully")
             }
-        )
+        }
+        receiveValue: { result in
+            switch result {
+            
+            case .success(let message):
+                print("Successfully got todo from subscription: \(message)")
+                DispatchQueue.main.async {
+                    self.messages.append(message)
+                }
+            case .failure(let error):
+                print("Got failed result with \(error.errorDescription)")
+            }
+        }
+        
+        if dataSink != nil{
+            tokens.insert(dataSink!)
+        }
+        
+        
     }
     
     func delete(_ message: Message){
-        Amplify.API.mutate(request: .delete(message)){
-            result in
-            print(result)
-        }
+        let token = Amplify.API.mutate(request: .delete(message))
+            .resultPublisher
+            .sink { completion in
+                if case let .failure(error) = completion{
+                    print("fail to create graphql", error)
+                }
+            } receiveValue: { result in
+                switch result{
+                
+                case .failure(let error):
+                    print(error)
+                case .success:
+                    print("delet success")
+                }
+            }
+        
+        tokens.insert(token)
+
         
     }
     

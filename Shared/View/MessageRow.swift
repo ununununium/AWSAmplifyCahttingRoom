@@ -12,6 +12,7 @@ import Combine
 struct MessageRow:View {
     let message: Message
     let isCurrentUser: Bool
+    let id = UUID()
     
     private var iconName:String{
         if let initial = message.senderName.first{
@@ -55,4 +56,8 @@ struct MessageRow_Previews: PreviewProvider{
         let msg = Message(senderName: "Jack", body: "This is test body", creationDate: 0)
         MessageRow(message: msg, isCurrentUser: true)
     }
+}
+
+extension MessageRow : Identifiable{
+    
 }
