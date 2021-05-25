@@ -9,59 +9,99 @@ import Foundation
 import SwiftUI
 import Combine
 
+import Amplify
+
 struct ChattingView: View{
     @State var text = ""
     @ObservedObject var sot = SourceOfTruth()
     
-    let currentUser = "pppMMM"
+    
+    let currentUser = Amplify.Auth.getCurrentUser()?.username
+    
+//    @State private var scp: ScrollViewProxy?
     
     init(){
+        
         sot.getMessages()
         sot.observeMessages()
+        
     }
     
     var body: some View{
+        
+        
         VStack{
-            
-            ScrollView{
-
+            ScrollView(.vertical){
                 ScrollViewReader { value in
-                    LazyVStack  {
-                        ForEach(sot.messages){
+                    VStack {
+                        ForEach(sot.messages, id:\.id){
                             message in
-
+                            
                             MessageRow(
                                 message: message,
                                 isCurrentUser: message.senderName == currentUser
-                            )
-                        }.onAppear {
-                            if let tmp = sot.messages.last {
-                                print("====>" + tmp.body)
-                            }else{
-                                print("====> mmmm")
+                            ).id(message.id)
+                        }.onAppear(){
+                            DispatchQueue.main.async {
+                                withAnimation {
+                                    value.scrollTo(sot.messages.last?.id)
+                                }
                             }
-
-                            value.scrollTo(sot.messages.count-1)
                         }
                     }
                 }
-            }
-            HStack{
-                TextField("Enter message", text:$text)
-                Button("Send", action:{didTapSend()})
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
+            }.onTapGesture {
+                hideKeyboard()
             }
             
+            
+            VStack {
+                HStack{
+                    TextField("Enter message", text:$text)
+                        .padding(12)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.black, lineWidth: 3)
+                        )
+
+
+                    Button("Send", action:{didTapSend()})
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+
+                }.padding(8)
+                .padding(.bottom, 30)
+
+            }
+
+            
+
+  
+            
+       
+            
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Chatting Room")
+        .toolbar{
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action:{sot.deleteAllMessages()}){
+                    Text("Delete All")
+                }
+            }
+            
+
+        }
+        
     }
     
     func didTapSend(){
         print(text)
-        let message = Message(senderName: currentUser, body: text,
+        var message = Message(senderName: currentUser ?? "Unknow User", body: text,
                               creationDate: Int(Date().timeIntervalSince1970))
-        sot.send(message)
+        sot.send(&message)
         
         text.removeAll()
         self.hideKeyboard()

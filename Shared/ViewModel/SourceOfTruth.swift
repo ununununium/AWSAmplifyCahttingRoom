@@ -15,12 +15,16 @@ class SourceOfTruth: ObservableObject{
     var tokens:Set<AnyCancellable> = []
     
     
-    func send(_ message: Message){
+    func send(_ message: inout Message){
+        let m = message
+        messages.append(m)
         let token = Amplify.API.mutate(request: .create(message))
             .resultPublisher
             .sink { completion in
                 if case let .failure(error) = completion{
                     print("fail to create graphql", error)
+                    m.isSent = .fail
+                    self.messages = self.messages.sorted(by: {$0.creationDate < $1.creationDate})
                 }
             }
             receiveValue: { result in
@@ -28,9 +32,16 @@ class SourceOfTruth: ObservableObject{
                 
                 case .failure(let graphQLError):
                     print(graphQLError)
+                    m.isSent = .fail
+                    self.messages = self.messages.sorted(by: {$0.creationDate < $1.creationDate})
                     
                 case .success:
                     print("Success")
+                    DispatchQueue.main.async {
+                        m.isSent = .success
+                        self.messages = self.messages.sorted(by: {$0.creationDate < $1.creationDate})
+                    }
+
                 }
             }
         
@@ -48,8 +59,13 @@ class SourceOfTruth: ObservableObject{
         } receiveValue: { result in
             switch result{
             case .success(let messages):
-                
-                self.messages = messages.sorted(by: {$0.creationDate < $1.creationDate})
+                DispatchQueue.main.async {
+                    self.messages = messages.sorted(by: {$0.creationDate < $1.creationDate}).map({ message in
+                        let loadedMessage = message
+                        loadedMessage.isSent = .success
+                        return loadedMessage
+                    })
+                }
             case .failure(let error):
                 print(error)
             }
@@ -77,7 +93,10 @@ class SourceOfTruth: ObservableObject{
             case .success(let message):
                 print("Successfully got todo from subscription: \(message)")
                 DispatchQueue.main.async {
-                    self.messages.append(message)
+                    if(!self.messages.contains(message)){
+                        self.messages.append(message)
+                    }
+                    
                 }
             case .failure(let error):
                 print("Got failed result with \(error.errorDescription)")
@@ -104,13 +123,22 @@ class SourceOfTruth: ObservableObject{
                 case .failure(let error):
                     print(error)
                 case .success:
+
+                    DispatchQueue.main.async {
+                        self.messages = self.messages.filter { !($0 == message) }
+
+                    }
                     print("delet success")
                 }
             }
         
         tokens.insert(token)
-
-        
     }
     
+    func deleteAllMessages(){
+        for m in messages{
+            delete(m)
+        }
+
+    }
 }

@@ -33,6 +33,7 @@ struct SessionView: View {
                 }
                 
             }
+            .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("All Views")
             .toolbar{
                 

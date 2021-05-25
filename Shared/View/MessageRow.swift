@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import Combine
 
+
+
 struct MessageRow:View {
     let message: Message
     let isCurrentUser: Bool
@@ -30,11 +32,13 @@ struct MessageRow:View {
         }
     }
     var body: some View{
-        VStack(alignment:.leading){
+        
+        VStack(alignment: .leading) {
             HStack(alignment: .top){
                 Image(systemName: "\(iconName).circle.fill")
                     .font(.largeTitle)
                     .foregroundColor(iconColor)
+                
                 VStack(alignment:.leading){
                     Text(message.senderName)
                         .font(.headline)
@@ -42,11 +46,31 @@ struct MessageRow:View {
                         .font(.body)
                     
                 }
+                .padding(10)
+                .background(Color.red)
+                .cornerRadius(10.0)
                 
-            }.padding(.horizontal,16)
-            
-            Divider().padding(.leading,16)
-            
+//                if(!message.isSent){
+//                    ProgressView()
+//                }else{
+//                    Text("🟢")
+//                }
+                
+                if(isCurrentUser){
+                    switch message.isSent{
+                    case .success:
+                        Text("🟢")
+                    case .fail:
+                        Text("🔴")
+                    case .loading:
+                        ProgressView()
+                        
+                    }
+                }
+                
+                
+                Spacer()
+            }.padding(.init(top: 0, leading: 8, bottom: 8, trailing: 8))
         }
     }
 }
@@ -58,6 +82,4 @@ struct MessageRow_Previews: PreviewProvider{
     }
 }
 
-extension MessageRow : Identifiable{
-    
-}
+extension MessageRow : Identifiable{}

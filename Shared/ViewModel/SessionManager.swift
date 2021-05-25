@@ -23,6 +23,7 @@ final class SessionManager: ObservableObject{
     @Published var authState: AuthState = .login
     
     
+    
     func getCurrentAuthUser(){
         if let user = Amplify.Auth.getCurrentUser(){
             authState = .session(user: user)
